@@ -5,10 +5,9 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 
 import pytest
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 
 from app.database import SessionLocal
-from app.models import Base, Product  #, Sale
+from app.models import Base  #, Sale
 from app.sale_manager import (
     check_stock,
     initialize_products,
@@ -23,7 +22,7 @@ from app.sale_manager import (
 def setup_database():
     # Setup in-memory database
     engine = create_engine("sqlite:///:memory:")
-    TestingSessionLocal = sessionmaker(bind=engine)
+    #TestingSessionLocal = sessionmaker(bind=engine)
     Base.metadata.create_all(engine)
     SessionLocal.configure(bind=engine)
 
