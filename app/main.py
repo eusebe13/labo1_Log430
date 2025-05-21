@@ -1,7 +1,12 @@
 from sale_manager import (
-    list_products, register_sale, search_products,
-    return_product, check_stock, initialize_products
+    check_stock,
+    initialize_products,
+    list_products,
+    register_sale,
+    return_product,
+    search_products,
 )
+
 
 def main():
     initialize_products()

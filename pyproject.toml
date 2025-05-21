@@ -1,6 +1,6 @@
 [tool.ruff]
 # Longueur maximale des lignes
-line-length = 88
+line-length = 100
 
 # Version cible de Python (à adapter si tu utilises Python 3.10, 3.8, etc.)
 target-version = "py311"
@@ -10,8 +10,10 @@ extend-exclude = [
     "__pycache__",
     ".venv",
     "migrations",
-    "tests/__pycache__"
+    "tests/__pycache__",
+    "tests/data/"
 ]
 
-# Codes de règles activées (optionnel : tu peux les affiner plus tard)
+# Codes de règles activées
 select = ["E", "F", "W", "I"]
+ignore = ["E501"]

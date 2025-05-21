@@ -1,5 +1,6 @@
-from models import Product, Sale
 from database import SessionLocal
+from models import Product, Sale
+
 
 def list_products():
     session = SessionLocal()
