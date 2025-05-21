@@ -27,8 +27,7 @@ jobs:
 
       - name: Lint avec Ruff
         run: |
-          source .venv/bin/activate
-          ruff app
+          ruff check .
 
   test:
     runs-on: ubuntu-latest
@@ -49,8 +48,7 @@ jobs:
 
       - name: Lancer les tests avec pytest
         run: |
-          source .venv/bin/activate
-          PYTHONPATH=app python -m pytest
+          pytest
 
   build-and-push:
     runs-on: ubuntu-latest
