@@ -1,0 +1,17 @@
+[tool.ruff]
+# Longueur maximale des lignes
+line-length = 88
+
+# Version cible de Python (à adapter si tu utilises Python 3.10, 3.8, etc.)
+target-version = "py311"
+
+# Dossiers à ignorer pendant le linting
+extend-exclude = [
+    "__pycache__",
+    ".venv",
+    "migrations",
+    "tests/__pycache__"
+]
+
+# Codes de règles activées (optionnel : tu peux les affiner plus tard)
+select = ["E", "F", "W", "I"]
