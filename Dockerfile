@@ -11,4 +11,3 @@ RUN pip install --no-cache-dir ruff
 COPY app/ .
 
 CMD ["sh", "-c", "python init_db.py && python main.py"]
-

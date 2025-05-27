@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Installer les dépendances
+      - name: Installer les dépendances et lancer Ruff
         run: |
           python -m venv .venv
           source .venv/bin/activate
@@ -28,6 +28,7 @@ jobs:
       - name: Lint avec Ruff
         run: |
           source .venv/bin/activate
+
           ruff check .
 
   test:
@@ -41,16 +42,18 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Installer les dépendances
+      - name: Installer les dépendances et lancer les tests
         run: |
           python -m venv .venv
           source .venv/bin/activate
+          pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Lancer les tests avec pytest
         run: |
           source .venv/bin/activate
           PYTHONPATH=app python -m pytest
+
 
   build-and-push:
     runs-on: ubuntu-latest
