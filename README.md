@@ -60,6 +60,7 @@ pytest
 
 ## Linting (Analyse statique)
 
+
 Ce projet utilise [Ruff](https://docs.astral.sh/ruff/) pour l’analyse statique du code :
 
 ```bash
@@ -86,6 +87,7 @@ ruff check . --fix
 
 ## Choix technologiques
 
+
 | Outil      | Rôle / Justification                          |
 | ---------- | --------------------------------------------- |
 | Python     | Langage principal                             |
@@ -110,3 +112,4 @@ lint-fix:
 test:
 	pytest
 ```
+

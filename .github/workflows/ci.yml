@@ -24,7 +24,11 @@ jobs:
           source .venv/bin/activate
           pip install --upgrade pip
           pip install -r requirements.txt
-          pip install ruff
+
+      - name: Lint avec Ruff
+        run: |
+          source .venv/bin/activate
+
           ruff check .
 
   test:
@@ -44,8 +48,12 @@ jobs:
           source .venv/bin/activate
           pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pytest
-          pytest
+
+      - name: Lancer les tests avec pytest
+        run: |
+          source .venv/bin/activate
+          PYTHONPATH=app python -m pytest
+
 
   build-and-push:
     runs-on: ubuntu-latest
