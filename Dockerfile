@@ -10,4 +10,4 @@ RUN pip install --no-cache-dir ruff
 
 COPY app/ .
 
-CMD ["python", "main.py"]
+CMD ["python", "app/main.py"]
